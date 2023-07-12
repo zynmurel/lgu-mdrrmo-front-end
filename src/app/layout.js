@@ -1,6 +1,7 @@
 import "./globals.css";
 import { Inter } from "next/font/google";
 import ThemeProvider from "@/theme/themeProvider";
+import theme from "@/theme/theme.json";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -12,10 +13,10 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={`${inter.className} m-0 `}>
-        <div className=" h-screen w-full flex justify-center items-center">
-          <ThemeProvider>{children}</ThemeProvider>
-        </div>
+      <body
+        className={`${inter.className} h-screen m-0 flex justify-center items-center`}
+      >
+        <ThemeProvider theme={theme}>{children}</ThemeProvider>
       </body>
     </html>
   );

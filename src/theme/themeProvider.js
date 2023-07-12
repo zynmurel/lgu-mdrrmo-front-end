@@ -1,9 +1,8 @@
 "use client";
 
 import { ConfigProvider } from "antd";
-import theme from "./theme.json";
 
-const ThemeProvider = ({ children }) => {
+const ThemeProvider = ({ children, theme }) => {
   return <ConfigProvider theme={theme}>{children}</ConfigProvider>;
 };
 
