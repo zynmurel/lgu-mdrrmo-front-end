@@ -3,9 +3,9 @@
     "colorError": "#F24C3D",
     "colorWarning": "#F2BE22",
     "colorBgLayout": "#d9d9d9",
-    "colorPrimary": "#00DFA2",
-    "colorLink": "#35A29F",
+    "colorPrimary": "#76BA1B",
+    "colorLink": "#76BA1B",
     "colorPrimaryBg": "#35A29F",
-    "colorBgBase": "#98EECC"
+    "colorBgBase": "#FFFF"
   }
 }
