@@ -2,22 +2,23 @@
 
 import ThemeProvider from "@/theme/themeProvider";
 import { LockOutlined, UserOutlined } from "@ant-design/icons";
-import { Card, Form, Input, Button, Checkbox } from "antd";
+import { Card, Form, Input, Button, Checkbox, theme, Divider } from "antd";
 
-import theme from "./theme/theme.json";
+import themeProvided from "./theme/theme.json";
 
 const App = () => {
+  const { token } = theme.useToken();
   const loginRules = {
     username: [
       {
         required: true,
-        message: "Please input your Username!",
+        message: "Please input your Username",
       },
     ],
     password: [
       {
         required: true,
-        message: "Please input your Password!",
+        message: "Please input your Password",
       },
     ],
   };
@@ -31,73 +32,79 @@ const App = () => {
   };
 
   return (
-    <ThemeProvider theme={theme}>
-      <div className=" bg-white w-full h-screen flex justify-center items-center">
-        <Card
-          style={{ width: 300 }}
-          bodyStyle={{ height: "100%" }}
-          className=" drop-shadow-xl"
+    <ThemeProvider theme={themeProvided}>
+      <div className="bg-[url('/some.png')] bg-cover w-full">
+        <div
+          className=" h-screen"
+          style={{
+            backgroundImage: `linear-gradient(to right, ${
+              token.colorLink + "dd"
+            }, ${token.colorLink + "cc"} 50%, white 50%, white 100%) `,
+          }}
         >
-          <p className=" text-2xl w-full text-center font-bold m-0">LOGIN</p>
-
-          <Form
-            name="normal_login"
-            className="login-form flex flex-col justify-center items-center"
-            initialValues={{
-              remember: true,
-            }}
-            onFinish={onFinish}
+          <div className="p-5 absolute bottom-0">
+            <p className="m-0 text-6xl font-semibold ">
+              LGU - <span className=" font-extralight">MDRRMO</span>
+            </p>
+            <Divider style={{ borderColor: "white" }} />
+            <p>asasf</p>
+          </div>
+          <Card
+            style={{ width: 400 }}
+            bodyStyle={{ height: "100%" }}
+            className="  shadow-2xl p-4  absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"
           >
-            <Form.Item
-              labelCol={{ span: 24 }}
-              className=" mb-0"
-              label="Username"
-              name="username"
-              rules={[
-                {
-                  required: true,
-                  message: "Please input your Username!",
-                },
-              ]}
+            <p className=" text-2xl text-center font-bold m-0 mb-3">LOGIN</p>
+
+            <Form
+              name="normal_login"
+              className="login-form flex flex-col justify-center items-center"
+              initialValues={{
+                remember: true,
+              }}
+              onFinish={onFinish}
             >
-              <Input
-                prefix={<UserOutlined className="site-form-item-icon w-full" />}
-                placeholder="Username"
+              <p className=" text-base w-full m-0 mb-1">Username</p>
+              <Form.Item
+                labelCol={{ span: 24 }}
+                name="username"
+                rules={loginRules.username}
+                className=" w-full"
+              >
+                <Input
+                  prefix={loginInputIcons.username}
+                  placeholder="Username"
+                  size="large"
+                />
+              </Form.Item>
+              <p className=" text-base w-full mb-1 -mt-1">Password</p>
+              <Form.Item
+                name="password"
+                rules={loginRules.password}
+                className=" w-full"
+              >
+                <Input.Password
+                  prefix={loginInputIcons.password}
+                  type="password"
+                  placeholder="Password"
+                  size="large"
+                />
+              </Form.Item>
+              <Button
+                type="primary"
+                htmlType="submit"
+                className="login-form-button w-full my-3"
+                style={{ borderRadius: 30 }}
                 size="large"
-              />
-            </Form.Item>
-            <Form.Item
-              labelCol={{ span: 24 }}
-              className=" mb-5"
-              label="Password"
-              name="password"
-              rules={[
-                {
-                  required: true,
-                  message: "Please input your Password!",
-                },
-              ]}
-            >
-              <Input
-                prefix={<LockOutlined className="site-form-item-icon" />}
-                type="password"
-                placeholder="Password"
-                size="large"
-              />
-            </Form.Item>
-            <Button
-              type="primary"
-              htmlType="submit"
-              className="login-form-button w-full mb-2"
-              size="large"
-            >
-              Log in
-            </Button>
-            <a className="login-form-forgot" href="">
-              Forgot password
-            </a>
-          </Form>
-        </Card>
+              >
+                Log in
+              </Button>
+              <a className="login-form-forgot" href="">
+                Forgot password
+              </a>
+            </Form>
+          </Card>
+        </div>
       </div>
     </ThemeProvider>
   );

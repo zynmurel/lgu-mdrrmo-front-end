@@ -1,11 +1,11 @@
 {
   "token": {
-    "colorError": "#F24C3D",
+    "colorError": "#FF7559",
     "colorWarning": "#F2BE22",
     "colorBgLayout": "#d9d9d9",
     "colorPrimary": "#76BA1B",
     "colorLink": "#76BA1B",
-    "colorPrimaryBg": "#35A29F",
+    "colorPrimaryBg": "#76BA1B",
     "colorBgBase": "#FFFF"
   }
 }

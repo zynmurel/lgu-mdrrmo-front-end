@@ -3,8 +3,10 @@
     "colorError": "#F24C3D",
     "colorWarning": "#F2BE22",
     "colorBgLayout": "#d9d9d9",
-    "colorLink": "#35A29F",
-    "colorPrimaryBg": "#35A29F",
-    "colorBgBase": "#98EECC"
+    "colorPrimary": "#ffff",
+    "colorLink": "#76BA1B",
+    "colorPrimaryBg": "#76BA1B",
+    "colorBgBase": "#FFFF",
+    "fontSize": 16
   }
 }
