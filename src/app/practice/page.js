@@ -46,6 +46,7 @@ const App = () => (
             {tags.map((tag) => (
               <Tag color="blue" key={tag}>
                 {tag}
+                test
               </Tag>
             ))}
           </>
