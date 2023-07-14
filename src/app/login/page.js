@@ -1,36 +1,49 @@
 "use client";
 
-import ThemeProvider from "@/theme/themeProvider";
-import { theme, Divider } from "antd";
+import ThemeProvider from "../../theme/themeProvider";
+import { theme } from "antd";
 
 import themeProvided from "./theme/theme.json";
-import LoginCard from "./components/loginCard";
+import LoginForm from "./components/loginForm";
+import LoginText from "./components/loginTexts";
 
 const App = () => {
   const { token } = theme.useToken();
 
   const styles = {
     backgroundLinearColor: {
-      backgroundImage: `linear-gradient(to right, ${token.colorLink + "dd"}, ${
-        token.colorLink + "cc"
-      } 50%, white 50%, white 100%) `,
+      backgroundImage: `linear-gradient(to right, ${token.colorLink + "bb"}, ${
+        token.colorLink + "aa"
+      } 50%, #fffffffa 50%, #fffffffa 100%) `,
     },
-    dividerStyle: { borderColor: "white", margin: 0 },
+  };
+
+  const bodyStyles = {
+    padding: 0,
+    backgroundImage: `linear-gradient(to right, ${token.colorLink + "bb"}, ${
+      token.colorLink + "bb"
+    }`,
   };
 
   return (
     <ThemeProvider theme={themeProvided}>
-      <div className="bg-[url('/some.png')] bg-cover w-full">
-        <div className=" h-screen" style={styles.backgroundLinearColor}>
-          <div className="p-5 absolute bottom-0 w-1/2">
-            <p className="m-0 text-7xl font-semibold text-white">
-              LGU<span className=" font-extralight"> - MDRRMO</span>
-            </p>
-            <Divider style={styles.dividerStyle} orientation="left">
-              <p className=" text-white text-xl font-light">Some words</p>
-            </Divider>
+      <div className="bg-[url('/lgu_imgs/bgOverlay.png')] bg-cover w-full">
+        <div className=" h-screen " style={styles.backgroundLinearColor}>
+          <img
+            src="/lgu_imgs/logo.png"
+            width={900}
+            className=" fixed -right-32 opacity-5 -bottom-32"
+            alt="sevilla_logo"
+          />
+          <div
+            style={bodyStyles}
+            className=" shadow-2xl shadow-black/40 p-0  absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 lg:w-loginBaseWidth w-loginMdWidth rounded-3xl"
+          >
+            <div className=" flex flex-row rounded-3xl bg-[url('/lgu_imgs/bgOverlay.png')]">
+              <LoginForm />
+              <LoginText />
+            </div>
           </div>
-          <LoginCard />
         </div>
       </div>
     </ThemeProvider>

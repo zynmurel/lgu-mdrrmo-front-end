@@ -1,7 +1,5 @@
 {
   "token": {
-    "colorError": "#FF7559",
-    "colorWarning": "#F2BE22",
     "colorBgLayout": "#d9d9d9",
     "colorPrimary": "#76BA1B",
     "colorLink": "#76BA1B",
