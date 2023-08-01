@@ -41,7 +41,7 @@ const LoginForm = () => {
         className=" text-6xl text-center font-bold m-0 mb-10"
         style={styles.textLinkColor}
       >
-        LOGIN
+        LOGINN
       </p>
       <Form.Item
         labelCol={{ span: 24 }}
